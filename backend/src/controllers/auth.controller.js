@@ -34,14 +34,6 @@ function logOut(req, res) {
     }
 }
 
-const checkAuth = (req, res) => {
-    try {
-        res.status(200).json({ user: req.user });
-    } catch (error) {
-        console.log(error.message);
-        res.status(500).json({ message: "Internal Server Error" });
-    }
-};
 
 const signUp = async (req, res) => {
     const { name, email, password } = req.body
@@ -80,5 +72,4 @@ module.exports = {
     logIn,
     signUp,
     logOut,
-    checkAuth,
 }
